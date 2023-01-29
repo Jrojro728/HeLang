@@ -20,7 +20,7 @@ namespace HeLang {
 		struct TokenValue
 		{
 			 std::string IdentifierString;
-			 double NumValue;
+			 double NumValue = 0.0;
 		};
 	}
 }

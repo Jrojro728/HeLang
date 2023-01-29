@@ -2,6 +2,7 @@
 #include <fstream>
 
 #include "Type.h"
+#include "Location.h"
 
 namespace HeLang {
 	namespace Reader {
@@ -10,6 +11,7 @@ namespace HeLang {
 		public:
 			//变量
 			::HeLang::Type::TokenValue TempValue;
+			::HeLang::Location::Location FileLocation;
 
 			//构析函数
 			FileReader() { throw "No FileName in"; };
@@ -17,7 +19,7 @@ namespace HeLang {
 			~FileReader() { _FileReader.close(); };
 
 			//函数
-			int GetChar() { return _FileReader.get(); };
+			int GetChar();
 			int GetToken();
 		private:
 			std::ifstream _FileReader;
